@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8' ?>
+<widget
+    android-versionCode = '1'
+    id = 'com.iBuildThings.MP3Player'
+    version = '1.0.0'
+    xmlns = 'https://www.w3.org/ns/widgets'>
+
+    <name>MP3Player</name>
+    <description>2 Button MP3Player</description>
+    <author>iBuildThings</author>
+
+    <preference name = 'orientation' value = 'portrait'/>
+
+</widget>

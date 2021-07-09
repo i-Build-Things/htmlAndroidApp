@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <title>MyApp</title>
+    </head>
+    <body>
+        <div id="playbutton">
+            <h1 id="playtext">Play</h1>
+        </div>
+        <div id="resetbutton">
+            <h2 id="resettext">Reset</h2>
+        </div>
+    </body>
+    <style>
+        body{
+            background-color: gray;
+        }
+        #playbutton{
+            background-color: yellowgreen;
+            height: 300px;
+            width: 300px;
+            border-radius: 50%;
+            text-align: center;
+            margin-left: auto ;
+            margin-right: auto ;
+            margin-top: 40%;
+        }
+        #playtext{
+            line-height: 300px;
+            font-size: 80px;
+        }
+        #resetbutton{
+            background-color: blue;
+            text-align: center;
+            width: 100px;
+            height: 80px;
+            border-radius: 20%;
+            color: white;
+            margin-left: auto ;
+            margin-right: auto ;
+        }
+        #resettext{
+            line-height: 80px;
+            font-size: 30px;
+        }
+    </style>
+    <script>
+        var playbutton = document.getElementById('playbutton');
+        var resetbutton = document.getElementById('resetbutton');
+        var playtext = document.getElementById('playtext');
+        var audio = new Audio('Audio.mp3');
+        playbutton.addEventListener('click', playpause);
+        resetbutton.addEventListener('click', reset);
+
+        var Flag = 0;
+
+        function playpause() {
+            if (Flag === 0){
+                audio.play();
+                playbutton.style.backgroundColor = 'red';
+                playtext.textContent = 'Pause';
+                Flag = 1;
+            }
+            else {
+                audio.pause()
+                playbutton.style.backgroundColor = 'yellowgreen';
+                playtext.textContent = 'Play';
+                Flag = 0;
+            }
+        }
+
+        function reset() {
+            audio.pause();
+            audio.currentTime = 0;
+            Flag = 0;
+            playbutton.style.backgroundColor = 'yellowgreen';
+            playtext.textContent = 'Play';
+        }
+    </script>
+</html>
